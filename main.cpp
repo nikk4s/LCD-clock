@@ -52,7 +52,7 @@ int main(void)
 	
 	while(1)
 	{
-		_delay_ms(600); //fudged this to tweak the timing
+		_delay_ms(550); // one second - delays embedded in functions
 	
 		secs++;
 		
@@ -129,12 +129,12 @@ int main(void)
 			
 		uint8_t length2 = 8;
 		
-		send_command(0xC0); // Move to beginning of second line
+		send_command(0xC0); // Move to beginning of second line  //adds 50ms delay
 
 		//Second line
 		for(uint8_t index = 0; index < length2; index++)
 		{
-			send_data(time[index]);
+			send_data(time[index]);  //8*50ms delay
 		}
 		
 
